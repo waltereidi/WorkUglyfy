@@ -8,13 +8,14 @@ namespace Uglyfy.App_Start
     using NUglify;
     using System;
     using System.IO;
+    using System.Web.Optimization;
 
-    public class MinifyHelper
+    public class MinifyHelper : IItemTransform
     {
-        public static void MinifyJavaScript(string inputFilePath, string outputFilePath)
+        public string MinifyJavaScript(string inputFilePath, string outputFilePath)
         {
-            string input = File.ReadAllText(inputFilePath);
-            UglifyResult result = Uglify.Js(input);
+            //string input = File.ReadAllText(inputFilePath);
+            UglifyResult result = Uglify.Js(outputFilePath);
 
             if (result.HasErrors)
             {
@@ -28,6 +29,7 @@ namespace Uglyfy.App_Start
                 File.WriteAllText(outputFilePath, result.ToString());
                 Console.WriteLine("Arquivo JavaScript minificado com sucesso.");
             }
+            return File.ReadAllText(outputFilePath);
         }
 
         public static void MinifyCss(string inputFilePath, string outputFilePath)
@@ -48,6 +50,9 @@ namespace Uglyfy.App_Start
                 Console.WriteLine("Arquivo CSS minificado com sucesso.");
             }
         }
+
+        public string Process(string includedVirtualPath, string input) => MinifyJavaScript(includedVirtualPath, input);
+
     }
 
 }

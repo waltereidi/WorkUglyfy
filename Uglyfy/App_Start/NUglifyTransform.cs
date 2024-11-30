@@ -7,6 +7,13 @@ namespace Uglyfy.App_Start
 
     public class NUglifyTransform : IBundleTransform
     {
+        private readonly string _contentType;
+
+        public NUglifyTransform(string contentType)
+        {
+            _contentType = contentType;
+        }
+
         public void Process(BundleContext context, BundleResponse response)
         {
             
