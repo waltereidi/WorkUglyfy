@@ -130,6 +130,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NUglifyTransform.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Utility\CustomJsUglyfy.cs" />
+    <Compile Include="Utility\CustomScriptBundle.cs" />
     <Compile Include="Utility\NuglyfyJsTransform.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
@@ -214,7 +216,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
-    <Content Include="Scripts\Home\Index.js" />
+    <Content Include="Scripts\Index.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.js" />
@@ -239,6 +241,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\Bundles\" />
+    <Folder Include="Scripts\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\bootstrap.min.js.map" />
