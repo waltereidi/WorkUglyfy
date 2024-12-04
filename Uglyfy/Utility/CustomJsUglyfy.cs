@@ -45,14 +45,13 @@ namespace Uglyfy.Utility
             {
                 var options = new NUglify.JavaScript.CodeSettings
                 {
-                    PreserveImportantComments = false, // Removes comments
-                    CollapseToLiteral = true,          // Optimize object literals
                     MinifyCode = true                  // Minify the code
                 };
+                
                 var uglifyResult = Uglify.Js(response.Content, options);
                 response.Content = uglifyResult.Code;
                 response.ContentType = "text/javascript";
-
+                
             }
 
 

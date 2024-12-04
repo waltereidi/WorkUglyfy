@@ -36,7 +36,6 @@ namespace Uglyfy.Utility
         public CustomScriptBundle(string virtualPath, string cdnPath)
             : base(virtualPath, cdnPath, new CustomJsUglyfy())
         {
-            base.ConcatenationToken = ";" + Environment.NewLine;
         }
     }
 }
